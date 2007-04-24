@@ -1,4 +1,5 @@
 Summary:	XSPF playlist reading and writing support
+Summary(pl.UTF-8):	Obsługa odczytu i zapisu playlist XSPF
 Name:		libspiff
 Version:	0.6.5
 Release:	1
@@ -16,21 +17,32 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 libSpiff brings XSPF playlist reading and writing support to your C++
 application.
 
+%description -l pl.UTF-8
+libSpiff daje możliwość odczytu i zapisu playlist XSPF z poziomu C++.
+
 %package devel
-Summary:	Header files and develpment documentation for libspiff
+Summary:	Header files for libspiff
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libspiff
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
-Header files and develpment documentation for libspiff.
+Header files for libspiff.
+
+%description devel -l pl.UTF-8
+Pliki nagłówkowe biblioteki libspiff.
 
 %package static
 Summary:	Static libspiff library
+Summary(pl.UTF-8):	Statyczna biblioteka libspiff
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libspiff library.
+
+%description static -l pl.UTF-8
+Statyczna biblioteka libspiff.
 
 %prep
 %setup -q
@@ -59,8 +71,8 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
-%{_includedir}/spiff
 %{_libdir}/*.la
+%{_includedir}/spiff
 
 %files static
 %defattr(644,root,root,755)
