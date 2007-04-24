@@ -8,9 +8,9 @@ Group:		Libraries
 Source0:	http://dl.sourceforge.net/libspiff/%{name}-%{version}.tar.gz
 # Source0-md5:	15e3d278e4af956134890108251f72b7
 URL:		http://libspiff.sourceforge.net/
-BuildRequires:	expat-devel
+BuildRequires:	expat-devel >= 1:1.95.8
 BuildRequires:	libstdc++-devel
-BuildRequires:	uriparser-devel
+BuildRequires:	uriparser-devel >= 0.3.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -25,6 +25,9 @@ Summary:	Header files for libspiff
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libspiff
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	expat-devel >= 1:1.95.8
+Requires:	libstdc++-devel
+Requires:	uriparser-devel >= 0.3.0
 
 %description devel
 Header files for libspiff.
