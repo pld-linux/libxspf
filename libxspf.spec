@@ -1,16 +1,22 @@
 Summary:	XSPF playlist reading and writing support
 Summary(pl.UTF-8):	Obsługa odczytu i zapisu playlist XSPF
 Name:		libspiff
-Version:	0.7.2
+Version:	0.7.3
 Release:	1
 License:	BSD
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/libspiff/%{name}-%{version}.tar.gz
-# Source0-md5:	513278b6ecd8d98732def8a351791b2d
+# Source0-md5:	06cb02e8588d28f68a40291464c12fa3
+Patch0:		%{name}-link.patch
 URL:		http://libspiff.sourceforge.net/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	expat-devel >= 1:1.95.8
 BuildRequires:	libstdc++-devel
+BuildRequires:	libtool >= 2:1.5
 BuildRequires:	uriparser-devel >= 0.3.0
+Requires:	expat >= 1:1.95.8
+Requires:	uriparser >= 0.3.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -49,8 +55,14 @@ Statyczna biblioteka libspiff.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure
 %{__make}
 
@@ -68,16 +80,17 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README THANKS
-%attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%doc AUTHORS COPYING ChangeLog NEWS README THANKS
+%attr(755,root,root) %{_bindir}/spiff_*
+%attr(755,root,root) %{_libdir}/libspiff.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libspiff.so.0
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/*.la
+%attr(755,root,root) %{_libdir}/libspiff.so
+%{_libdir}/libspiff.la
 %{_includedir}/spiff
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libspiff.a
