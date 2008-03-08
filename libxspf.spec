@@ -1,12 +1,12 @@
 Summary:	XSPF playlist reading and writing support
 Summary(pl.UTF-8):	Obsługa odczytu i zapisu playlist XSPF
 Name:		libspiff
-Version:	0.8.2
-Release:	4
+Version:	0.8.3
+Release:	1
 License:	BSD
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/libspiff/%{name}-%{version}.tar.gz
-# Source0-md5:	69c4f8d1c8315a07f3839dd6bb41b5f3
+# Source0-md5:	bdb289c0601ebcd9f949ff288915faf2
 Patch0:		%{name}-link.patch
 URL:		http://libspiff.sourceforge.net/
 BuildRequires:	autoconf
