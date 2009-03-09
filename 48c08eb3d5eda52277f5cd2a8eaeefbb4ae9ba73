@@ -1,0 +1,4 @@
+- 1.2.0 version
+- name changed libspiff -> libxspf
+- BR: pkg-config
+- uriparser >= 0.7.5 required
