@@ -18,6 +18,7 @@ BuildRequires:	pkg-config
 BuildRequires:	uriparser-devel >= 0.7.5
 Requires:	expat >= 1:1.95.8
 Requires:	uriparser >= 0.7.5
+Obsoletes:	libspiff
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -35,6 +36,7 @@ Requires:	%{name} = %{version}-%{release}
 Requires:	expat-devel >= 1:1.95.8
 Requires:	libstdc++-devel
 Requires:	uriparser-devel >= 0.3.0
+Obsoletes:	libspiff-devel
 
 %description devel
 Header files for libxspf.
@@ -47,6 +49,7 @@ Summary:	Static libxspf library
 Summary(pl.UTF-8):	Statyczna biblioteka libxspf
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
+Obsoletes:	libspiff-static
 
 %description static
 Static libxspf library.
