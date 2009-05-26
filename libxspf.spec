@@ -1,6 +1,7 @@
 #
 # Conditional build
-%bcond_without  tests	# disable cpptest
+%bcond_without	static_libs	# don't build static library
+%bcond_without  tests		# disable cpptest
 #
 Summary:	XSPF playlist reading and writing support
 Summary(pl.UTF-8):	Obsługa odczytu i zapisu playlist XSPF
@@ -72,7 +73,9 @@ Statyczna biblioteka libxspf.
 %{__autoconf}
 %{__automake}
 %configure \
+	%{!?with_static_libs:--disable-static} \
 	 %{!?with_tests:--disable-test}
+
 %{__make}
 
 %install
@@ -101,6 +104,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/xspf
 %{_pkgconfigdir}/xspf.pc
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libxspf.a
+%endif
