@@ -1,3 +1,7 @@
+#
+# Conditional build
+%bcond_without  tests	# disable cpptest
+#
 Summary:	XSPF playlist reading and writing support
 Summary(pl.UTF-8):	Obsługa odczytu i zapisu playlist XSPF
 Name:		libxspf
@@ -11,6 +15,7 @@ Patch0:		%{name}-link.patch
 URL:		http://libspiff.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
+%{?with_tests:BuildRequires:	cpptest-devel >= 1.1.0}
 BuildRequires:	expat-devel >= 1:1.95.8
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:1.5
@@ -66,7 +71,8 @@ Statyczna biblioteka libxspf.
 %{__aclocal}
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	 %{!?with_tests:--disable-test}
 %{__make}
 
 %install
