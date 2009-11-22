@@ -20,7 +20,7 @@ BuildRequires:	automake
 BuildRequires:	expat-devel >= 1:1.95.8
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:1.5
-BuildRequires:	pkg-config
+BuildRequires:	pkgconfig
 BuildRequires:	uriparser-devel >= 0.7.5
 Requires:	expat >= 1:1.95.8
 Requires:	uriparser >= 0.7.5
