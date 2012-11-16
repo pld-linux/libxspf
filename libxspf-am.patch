@@ -1,0 +1,9 @@
+--- libxspf-1.2.0/Makefile.am~	2009-03-07 00:45:48.000000000 +0100
++++ libxspf-1.2.0/Makefile.am	2012-11-16 14:40:53.899030547 +0100
+@@ -1,5 +1,5 @@
+ ## Process this file with automake to produce Makefile.in
+-AUTOMAKE_OPTIONS = 1.10.1 gnu dist-zip dist-bzip2 dist-lzma subdir-objects
++AUTOMAKE_OPTIONS = 1.10.1 gnu dist-zip dist-bzip2 subdir-objects
+ 
+ ACLOCAL_AMFLAGS = -I m4
+ 

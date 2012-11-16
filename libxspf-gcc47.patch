@@ -1,0 +1,10 @@
+--- libxspf-1.2.0/examples/read/read.cpp~	2009-02-21 21:13:25.000000000 +0100
++++ libxspf-1.2.0/examples/read/read.cpp	2012-11-16 14:41:56.225695017 +0100
+@@ -43,6 +43,7 @@
+ #include <cstdio>
+ #include <cstdlib> // MAX_PATH
+ #include <climits> // PATH_MAX
++#include <unistd.h>
+ 
+ 
+ #if defined(__WIN32__) || defined(WIN32)

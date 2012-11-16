@@ -7,12 +7,14 @@ Summary:	XSPF playlist reading and writing support
 Summary(pl.UTF-8):	Obsługa odczytu i zapisu playlist XSPF
 Name:		libxspf
 Version:	1.2.0
-Release:	2
+Release:	3
 License:	BSD
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/libspiff/%{name}-%{version}.tar.gz
 # Source0-md5:	d3276bf6c7f86442b72629a3e7b8bd5b
 Patch0:		%{name}-link.patch
+Patch1:		%{name}-am.patch
+Patch2:		%{name}-gcc47.patch
 URL:		http://libspiff.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -66,6 +68,8 @@ Statyczna biblioteka libxspf.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
+%patch2 -p1
 
 %build
 %{__libtoolize}
