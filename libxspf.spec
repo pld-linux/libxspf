@@ -88,6 +88,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# obsoleted by pkg-config
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libxspf.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -104,7 +107,6 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libxspf.so
-%{_libdir}/libxspf.la
 %{_includedir}/xspf
 %{_pkgconfigdir}/xspf.pc
 
